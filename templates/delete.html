@@ -1,0 +1,80 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Student Result Management System </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color:WhiteSmoke;  
+}  
+button {   
+       background-color: DeepPink;   
+       width: 80%;  
+        color: Pink;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;
+           
+    }   
+ input[type=text], input[type=password] {   
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 15px;   
+        background-color: HotPink;  
+    }
+
+</style>   
+</head>
+<script>    
+        function validate() {
+            var enroll=document.delete_form.enroll;    
+            
+            if (enroll.value.length <=0) {    
+                alert("enrollment number is required");    
+                enroll.focus();    
+                return false;    
+            }
+            
+            return true;    
+        }    
+    </script>          
+<body> 
+
+       
+    <form action=/deleted/ method=post name="delete_form" onsubmit="return validate()"> 
+    {%  csrf_token %} 
+        <div class="container">
+        <center> <h1> Deleting records of the students </h1> </center>
+    <p style=color:red>Enter the students details</p>   
+            <label><b>Enrollment Number :</b></label><br/>   
+            <input type="text" placeholder="Enter Enrollment Number of Students" name="enroll" required>  
+            
+            <button type="submit"><b>Delete the Student</b></button>   
+              
+        </div>   
+    </form>     
+</body>     
+</html>  
+
+

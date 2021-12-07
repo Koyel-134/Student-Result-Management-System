@@ -1,0 +1,111 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Student Result Management System </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color:WhiteSmoke;  
+}  
+button {   
+       background-color: DeepPink;   
+       width: 80%;  
+        color: Pink;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;
+           
+    }   
+ input[type=text], input[type=password] {   
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 15px;   
+        background-color: HotPink;  
+    }
+.GFG{
+     background-color:MediumVioletRed;
+     border: 2px solid red;
+     color: Lime;
+     padding: 5px 5px;
+     text-align:center;
+     display:block;
+     font-size: 15 px;
+     margin: 4px 4px;
+     cursor:pointer;
+     border-radius:8px;
+}
+.GFG:hover{
+  background-color:LightPink;
+  color:red;
+  border-radius:8px;
+}     
+
+</style> 
+<script>    
+        function validate() { 
+            flag = true;
+            var designation = document.login_form.designation;    
+            var username=document.login_form.username;
+            var password=document.login_form.password;
+            if (designation.value == "select designation") {    
+                alert("designation is required");    
+                designation.focus();    
+                return false;    
+            }
+             if (password.length < 8) {    
+                alert("password a password must contain at least eight character");    
+                password.focus();    
+                return false;    
+            } 
+             if (username.value.length <= 0) {    
+                alert("username is required");    
+                username.focus();    
+                return false;    
+            }               
+            return flag;    
+        }    
+    </script>        
+</head>    
+<body> 
+
+ <a href=/logout/><b>Logout the Session</b></a>     
+    <form action=/logined/ method=post name="login_form" onsubmit="return validate()" >
+{% csrf_token %} 
+        <div class="container">
+       <center> <h1> Teacher Login Form </h1> </center>
+       <p style=color:red>If you have registered successfully now you can proceed to login</p> 
+        <hr>   
+            <label><b>Username :</b> </label><br/>   
+            <input type="text" placeholder="Enter Username" name="username" required><br/>  
+            <label><b>Password :</b></label><br/>   
+            <input type="password" placeholder="Enter Password" name="password" required><br/> 
+             
+            <button type="submit"><b>Login</b></button><br/>
+<a href=/forget/><b>Forget Password</b></a><p style='color:red'>If you forgot any password,so you can click this option</p><br/>
+<a href=/ ><b>Register Here</b></a><p style=color:blue>If you are new one to create account</p>
+</div>  
+</form>
+  
+</body>     
+</html>  

@@ -1,0 +1,243 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<title> Student Result Management System </title> 
+<style>  
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color:WhiteSmoke;  
+}  
+button {   
+       background-color: DeepPink;   
+       width: 80%;  
+        color: Pink;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;
+           
+    }   
+ input[type=text], input[type=password] {   
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    } 
+textarea{
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;
+} 
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 15px;   
+        background-color: HotPink;  
+    }
+
+.GFG{
+     background-color:Green;
+     border: 2px solid red;
+     color: Orange;
+     padding: 2px 2px;
+     text-align:center;
+     display:block;
+     font-size: 15 px;
+     margin: 1px 1px;
+     cursor:pointer;
+     border-radius:4px;
+}
+.GFG:hover{
+  background-color:Aqua;
+  color:red;
+  border-radius:4px;
+}             
+     
+
+#menubar ul{
+   list-style-type:none;
+   
+}
+#menubar ul li{
+   background-color:DodgerBlue;
+   border:1px solid black;
+   width:120px;
+   height:35px;
+   text-align:center;
+   line-height:35px;
+   position:relative;
+   float:left;
+   border-radius:8px;
+}
+#menubar ul li a{
+    text-decoration:none;
+    color:MediumSpringGreen;
+    display:block;
+}
+#menubar ul li a:hover{
+  background-color:AliceBlue;
+  border-radius:8px;
+}
+</style>
+<script>    
+        function validate() { 
+            var flag=true;   
+            var fullname = document.reg_form.firstname.value;    
+            var designation = document.reg_form.designation.value;    
+            var email = document.reg_form.email.value;    
+            var phone = document.reg_form.phone.value;    
+            var gender = document.reg_form.gender.value;
+            var address=document.reg_form.address.value;
+            var username=document.reg_form.username.value;
+            var password=document.reg_form.password.value;
+            var psw-repeat=document.reg_form.psw-repeat.value;    
+    
+            if (fullname.length <= 0) {    
+                alert("Name is required");    
+                    
+                flag=false;    
+            }    
+            
+            if (address.length <= 0) {    
+                alert("Address is required");    
+                    
+                flag=false;    
+            }    
+            if (gender.length <= 0) {    
+                alert("Gender is required");    
+                    
+                flag=false;    
+            }    
+            if (email.length <= 0) {    
+                alert("Email Id is required");    
+                   
+                flag=false;    
+            }    
+            if (phone.length <= 0) {    
+                alert("phone number is required");    
+                   
+                flag=false;    
+            }    
+            if (designation == "select designation") {    
+                alert("designation is required");    
+                   
+                flag=false;    
+            }
+            if (password.length < 8) {    
+                alert("password a password must contain less than eight character");    
+                    
+                flag=false;    
+            } 
+            if (psw-repeat.length < 8) {    
+                alert("confirm password is same as that of password with less than eight character");    
+                   
+                flag= false;    
+            }
+            if (username.length <= 0) {    
+                alert("username is required");    
+                   
+                flag= false;    
+            } 
+           
+               if(psw==psw-repeat)
+               {
+                
+               }
+               else
+               {
+                alert("No match password & confirm password");
+                flag=false;
+                }
+                           
+            return flag;    
+        }    
+    </script>      
+</head>  
+<body>
+<a href=/logout/><b>Logout the Session</b></a>
+<div id="menubar">
+    <ul>
+       <li style=background-color:DeepPink color:black><a href=/ ><b>Home</b></a></li>
+       <li style=background-color:DeepPink color:snow><a href=/about/><b>About</b></a></li>
+       <li style=background-color:DeepPink color:black><a href=/contact/><b>Contact Us</b></a></li>
+    </ul>
+</div>
+<br/>
+<br/>
+<br/>
+<form action=/registered/ method=post name="reg_form" onsubmit="return validate()" >
+  {% csrf_token %} 
+   <div class="container"> 
+    
+    <center>  <h1> Teacher Registeration Form</h1> </center>
+    
+     
+   <label><b>Fullname:</b></label><br/>  
+  <input type="text" name="fullname" placeholder= "Fullname" size="15" required /> <br/>  
+    
+ <div>  
+ <label><b>Designation:</b></label><br/>   
+ <select name="designation">  
+ <option value="Designation">Designation</option>  
+ <option value="Teacher">Teacher</option>  
+ <option value="Admin">Admin</option>  
+ <option value="Exam-Coordinator">Exam-Coordinator</option>  
+ <option value="Student">Student</option>  
+ </select><br/> 
+ </div>  
+ <div>  
+ <label><b>Gender :</b></label><br/> 
+ <input type="radio" value="Male" name="gender" checked > Male   
+ <input type="radio" value="Female" name="gender"> Female   
+ <input type="radio" value="Other" name="gender"> Other  
+  <br/>
+ </div>
+<label><b>Phone : </b></label><br/>  
+<input type="text" name="phone" placeholder="phone no." size="10"/ required><br/>   
+<label for="address"><b>Current Address :</b></label><br/>  
+<textarea cols="80" rows="5" placeholder="Current Address" name="address" required>  
+</textarea> <br/> 
+ <label for="email"><b>Email:</b></label><br/>  
+ <input type="text" placeholder="Enter Email" name="email" required><br/>
+ <label for="username"><b>Username</b></label><br/>
+ <input type="text" placeholder="Enter your name" name="username" required><br/>  
+  
+    <label for="psw"><b>Password</b></label><br/>  
+    <input type="password" placeholder="Enter Password" name="password" required><br/>  
+  
+    <label for="psw-repeat"><b>Re-type Password</b></label><br/>  
+    <input type="password" placeholder="Retype Password" name="psw-repeat" required><br/>
+    <label for="security-question"><b>Security Question</b></label><br/>
+    <input type="text" placeholder="Enter the security question" name="question" required><br/>
+    <label for="security-answer"><b>Security Answer</b></label><br/>
+    <input type="password" placeholder="Enter the security answer" name="answer" required><br/>  
+    <button type="submit"><b>Register</b></button>
+   <p style=color:red>If you have already an account you can proceed for login
+   <a href=/login/><b>Login your Account</b></a>    
+</form> 
+{{ msg}} 
+</body>  
+</html>          
+    
+    
+      
+    
+
+

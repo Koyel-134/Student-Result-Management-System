@@ -1,0 +1,137 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Student Result Management System </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color:WhiteSmoke;  
+} 
+div {
+      display: flex;
+      justify-content: center;
+}
+img {
+      width:950px;
+      height:500px;
+}
+h1{
+text-align:center;
+
+} 
+button {   
+       background-color: #4CAF50;   
+       width: 100%;  
+        color: orange;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;   
+    }   
+ input[type=text], input[type=password] {   
+        width: 100%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 25px;   
+        background-color: lightblue;  
+    } 
+tr{
+  background-color:green;
+  color:white;
+}
+th{
+  background-color:Gold;
+  color:blue;
+}  
+td{
+  background-color:Gold;
+  color:brown;
+}
+#menubar ul{
+   list-style-type:none;
+   
+}
+.GFG{
+     background-color:MediumVioletRed;
+     border: 2px solid red;
+     color: Lime;
+     padding: 5px 5px;
+     text-align:center;
+     display:block;
+     font-size: 15 px;
+     margin: 4px 4px;
+     cursor:pointer;
+     border-radius:8px;
+}
+.GFG:hover{
+  background-color:LightPink;
+  color:red;
+  border-radius:8px;
+}     
+#menubar ul li{
+   background-color:red;
+   border:1px solid black;
+   width:120px;
+   height:35px;
+   text-align:center;
+   line-height:35px;
+   position:relative;
+   float:left;
+   border-radius:8px;
+}
+#menubar ul li a{
+    text-decoration:none;
+    color:Lime;
+    display:block;
+}
+#menubar ul li a:hover{
+  background-color:Pink;
+  border-radius:8px;
+}
+</style>   
+</head>    
+<body>
+<a href=/logout/><b>Logout the Session</b></a>
+<div id="menubar">
+    <ul>
+       <li style=background-color:DeepPink color:black><a href=/ ><b>Home</b></a></li>
+       <li style=background-color:DeepPink color:snow><a href=/about/><b>About</b></a></li>
+       <li style=background-color:DeepPink color:black><a href=/contact/><b>Contact Us</b></a></li>
+       
+    </ul>
+</div>
+                          <h2 style=color:MediumVioletRed>There are some task to be performed by teacher for generating result of students</h2><br/>
+<table border=1>
+<tr><th style=background-color:LightPink color:PaleVioletRed>SNo</th><th style=background-color:LightPink color:PaleVioletRed>Instruction for Teachers</th><th style=background-color:LightPink color:PaleVioletRed>Click Here For Performing Action</th></tr>
+
+<tr><td style=background-color:LightPink color:PaleVioletRed>1</td><td style=background-color:LightPink color:PaleVioletRed>If you want to make all the records of student or if student is new then you can add the records of all student using student detail information</td><td style=background-color:LightPink color:PaleVioletRed><a href=/add/><button class="GFG"><b>Add Students</b></button></a></td></tr>
+
+<tr><td style=background-color:LightPink color:PaleVioletRed>2</td><td style=background-color:LightPink color:PaleVioletRed>If you have done any actions regarding the records of student like adding,deleting and updating,click that option see that record of student has been updated or not</td><td style=background-color:LightPink color:PaleVioletRed><a href=/show/><button class="GFG"><b>Show Result</b></button></a></td></tr>
+
+<tr><td style=background-color:LightPink color:PaleVioletRed>3</td><td style=background-color:LightPink color:PaleVioletRed>If you find that some student has left the institution,then you can delete the records of student</td><td style=background-color:LightPink color:PaleVioletRed><a href=/delete/><button class="GFG"><b>Delete Students</b></button></a></td></tr>
+
+<tr><td style=background-color:LightPink color:PaleVioletRed>4</td><td style=background-color:LightPink color:PaleVioletRed>If you have find that the student marks has been mismatched, or you have done any wrong entries of marks on each subject of students.So,you use update option which is used to make changes of the record of student</td><td style=background-color:LightPink color:PaleVioletRed><a href=/update/><button class="GFG"><b>Update Students</b></button></a></td></tr>
+</table>
+ 
+</body>
+</html> 
+    

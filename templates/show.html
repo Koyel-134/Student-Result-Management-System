@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Student Result Management System </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color:WhiteSmoke;  
+}  
+button {   
+       background-color: DeepPink;   
+       width: 80%;  
+        color: Pink;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;
+           
+    }   
+ input[type=text], input[type=password] {   
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }
+.GFG{
+     background-color:MediumVioletRed;
+     border: 2px solid red;
+     color: Lime;
+     padding: 5px 5px;
+     text-align:center;
+     display:block;
+     font-size: 15 px;
+     margin: 4px 4px;
+     cursor:pointer;
+     border-radius:8px;
+}
+.GFG:hover{
+  background-color:LightPink;
+  color:red;
+  border-radius:8px;
+}        
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 15px;   
+        background-color: HotPink;  
+    }
+
+tr{
+  background-color:green;
+  color:MediumVioletRed;
+}
+th{
+  background-color:Pink;
+  color:MediumVioletRed;
+}  
+
+</style>   
+</head>    
+<body> 
+
+    <center> <h1 style=color:DeepPink>B.Tech 3rd Year 5th Semester CSE-2 Students Result </h1> </center>
+    <table border=1 style=color:red>
+    <tr style=background-color:LightPink color:PaleVioletRed><th>Enrollment Number</th><th>Name of Student</th><th>Course</th><th>Branch</th><th>Section</th><th>Semester</th><th>Theory Of Computation</th><th>Database Management System</th><th>Departmental Electives</th><th>Open Electives</th><th>Total Marks</th><th>Percentage</th></tr>
+{% for row in rows %}
+<tr style=background-color:LightPink color:PaleVioletRed><td>{{ row.enroll}}</td><td> {{ row.name }}</td><td> {{ row.course }} </td><td>{{ row.branch }}</td><td>{{ row.section }}</td><td>{{ row.semester }}<td>{{ row.toc }}</td><td>{{ row.dbms }}</td><td>{{ row.departmentalelectives }}</td><td>{{ row.openelectives }}</td><td>{{ row.totalmarks }}</td><td>{{ row.percentage  }}</td></tr>
+{% endfor %}
+       
+    
+</body>     
+</html>  
+
+

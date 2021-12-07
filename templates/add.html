@@ -1,0 +1,194 @@
+<!DOCTYPE html>   
+<html>   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<title> Student Result Management System </title>  
+<style>   
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color:WhiteSmoke;  
+}  
+button {   
+       background-color: DeepPink;   
+       width: 80%;  
+        color: Pink;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;
+           
+    }   
+ input[type=text], input[type=password] {   
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 15px;   
+        background-color: HotPink;  
+    }
+
+</style>  
+</head>
+<script>    
+        function validate() {
+            var flag=true;
+            var enroll=document.add_form.value;    
+            var name = document.add_form.value;    
+            var course=document.add_form.value;
+            var branch=document.add_form.value;
+            var section=document.add_form.value;
+            var semester=document.add_form.value;    
+            var toc = document.add_form.value;    
+            var dbms=document.add_form.value;
+            var departmentalelectives=document.add_form.value;
+            var openelectives=document.add_form.value;
+            if (enroll.value.length <=0) {    
+                alert("enrollment number is required");    
+                   
+                flag=false;    
+            }
+            if (name.value.length <= 0) {    
+                alert("name is required");    
+                    
+                flag=false;    
+            } 
+            if (course=="select course"){
+                  alert("course is required")
+                  flag=false;
+            } 
+             if (branch=="select branch"){
+                  alert("branch is required")
+                  flag=false;
+            }
+             if (section=="select section"){
+                  alert("section is required")
+                  flag=false;
+            }
+             if (semester=="select semester"){
+                  alert("semester is required")
+                  flag=false;
+            }   
+            
+            if (toc.value.length <= 0) {    
+                alert("entering the marks of TOC is required");    
+                    
+                flag=false;    
+            }   
+            if (dbms.value.length <= 0) {    
+                alert("entering the marks of DBMS is required");    
+                    
+                flag=false;    
+            }         
+            if (departmentalelectives.value.length <= 0) {    
+                alert("entering the marks of departmental elctives is required");    
+                    
+                flag=false;    
+            } 
+            if (departmentalelectives=="select departmental electives"){
+                  alert("departmental electives is required")
+                  flag=false;
+            } 
+            if (openelectives.value.length <= 0) {    
+                alert("entering the marks of open elctives is required");    
+                    
+                flag=false;    
+            }
+            if (openelectives=="select open electives"){
+                  alert("open electives is required")
+                  flag=false;
+            }                           
+            return true;    
+        }    
+    </script>      
+<body>
+
+      
+    
+      
+    <form action=/add2/ method=post name="add_form" onsubmit="return validate()"> 
+    {%  csrf_token %}
+         <div class="container">
+          <center> <h1> Adding records for the students </h1> </center>
+    <p style=color:red>Enter the students details</p>   
+            <label><b>Enrollment Number :</b></label><br/>   
+            <input type="text" placeholder="Enter Enrollment Number of Students" name="enroll" required><br/> 
+            <label><b>Name  of Students:</b></label><br/>   
+            <input type="text" placeholder="Enter the Name of Students" name="name" required><br/>
+            <label><b>Course</b></label><br/>
+            <select name="course">
+            <option value="Course">Select Course</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
+            <option value="BCA">BCA</option>
+            <option value="MCA">MCA</option>
+            <option value="B.Sc">B.Sc</option>
+            <option value="M.Sc">M.Sc</option>
+            </select><br/> 
+            <label><b>Branch</b></label><br/>
+            <select name="branch">
+            <option value="Branch">Select Branch</option>
+            <option value="CSE">CSE</option>
+            <option value="CST">CST</option>
+            <option value="CSIT">CSIT</option>
+            <option value="CSE-AIML">CSE-AIML</option>
+            <option value="CSE-DS">CSE-DS</option>
+            </select><br/> 
+            <label><b>Section</b></label><br/>
+            <select name="section">
+            <option value="Section">Select Section</option>
+            <option value="CS-2">CS-2</option>
+            </select><br/>
+            <label><b>Semester</b></label><br/>  
+            <select name="semester">
+            <option value="Semester">Select Semester</option>
+            <option value="5">5</option>
+            </select><br/>  
+            <label><b>Enter the marks in Theory of Computation :</b></label><br/>   
+            <input type="text" placeholder="Enter the Marks of TOC" name="toc" required><br/>
+            <label><b>Enter the marks in DBMS :</b></label><br/>   
+            <input type="text" placeholder="Enter the Marks of DBMS" name="dbms" required><br/>
+            <label><b>Departmental Electives</b></label><br/>
+            <select name="departmentalelectives">
+            <option value="Departmental Electives">Select Departmental Electives</option>
+            <option value="Cyber Security">Cyber Security</option>
+            <option value="Data Analytics">Data Analytics</option>
+            <option value="Pattern Recognition">Pattern Recognition</option>
+            </select><br/>   
+            <input type="text" placeholder="Enter the Departmental Electives" name="departmentalelectives" required><br/>
+            <label><b>Open Electives</b></label><br/>
+            <select name="openelectives">
+            <option value="Open Electives">Select Open Electives</option>
+            <option value="Internet and Web Technology">Internet and Web Technology</option>
+            <option value="Object Oriented Programming">Object Oriented Programming</option>
+            <option value="Introduction to DBMS">Introduction to DBMS</option>
+            </select><br/>   
+            <input type="text" placeholder="Enter the Open Electives" name="openelectives" required><br/>
+            
+        
+            <button type="submit"><b>Add the Student</b></button>   
+              
+        </div>
+          
+    </form>
+         
+</body>     
+</html>  
+
+

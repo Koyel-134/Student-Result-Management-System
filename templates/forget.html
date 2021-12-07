@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial scale-scale=1">
+<title>Student Result Management System</title>
+<style>
+Body {  
+  font-family: Calibri, Helvetica, sans-serif;  
+  background-color:WhiteSmoke;  
+}  
+button {   
+       background-color: DeepPink;   
+       width: 80%;  
+        color: Pink;   
+        padding: 15px;   
+        margin: 10px 0px;   
+        border: none;   
+        cursor: pointer;   
+         }   
+ form {   
+        border: 3px solid #f1f1f1;
+           
+    }   
+ input[type=text], input[type=password] {   
+        width: 80%;   
+        margin: 8px 0;  
+        padding: 12px 20px;   
+        display: inline-block;   
+        border: 2px solid green;   
+        box-sizing: border-box;   
+    }  
+ button:hover {   
+        opacity: 0.7;   
+    }   
+  .cancelbtn {   
+        width: auto;   
+        padding: 10px 18px;  
+        margin: 10px 5px;  
+    }   
+        
+     
+ .container {   
+        padding: 15px;   
+        background-color: HotPink;  
+    }
+
+</style>
+<script>
+  function validate(){
+    
+    
+    var username=document.forget_form.value;
+    
+    
+    
+    if (username.length < 8){
+         return true;
+    else
+    {
+       d1.innerHTML="username has not match"
+       return false;
+    }
+   
+ 
+   
+}
+</script>
+</head>
+<body>
+<form action=/forget2/ method=post name="forget_form" onsubmit="return validate()">
+{% csrf_token %}
+<div class="container">
+
+<label for="username"><b>Username:</b></label><br/>
+<input type="text" placeholder="Enter your username" name="username" required><br/>
+<button type="submit"><b>Submit</b></button><br/>
+
+<p style="color:blue">If you have entered username correctly so you can proceed to change password</p>
+<br>
+<a href=/editpassword/><b>Change Password</b></a>
+<div style=color:red>{{ msg }}</div>
+</form>
+</body>
+</html>
